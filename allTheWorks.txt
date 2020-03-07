@@ -1,0 +1,202 @@
+//include section
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<math.h>
+//procedures declaration section 
+void fizzBuzz(int maxValue);
+void hypotenuse(int leg1,leg2);
+void mirrorNumber(int capicua);
+void addTwoNumbers(int number1,number2);
+void swapTwoNumbers(int firstN,secondN);
+void primeNumbers(int lastN);
+int primo(int val1);
+void sort(int x,y,z);
+//global variable declaration section
+
+//main function implementation 
+int main(int argc, char** argv)
+{
+int argument1,argument2,argument3;
+//printf("entro a main1 argv[2]: %s\n", argv[2]);
+  if(argc==1)
+  {
+    printf("instructions%s\n",argv[0]);
+    printf("\tTo run fizzBuzz enter f and then a space and enter the number of times the loop will be repeated %s\n",argv[0]);
+    printf("\tTo run hypotenuse introduce f and then introduce leg1 and leg 2%s\n",argv[0]);
+    printf("\tTo run Mirror Number, enter c and then enter the number to know if it is Capicua (mirror) or not%s\n",argv[0]);
+    printf("\tTo run addTwoNumbers enter a then enter the first number and then the other, each separated by a space%s\n",argv[0]);
+    printf("\tTo run swapTwoNumbers atfirst introduce s then introduce the first number  and then the second number  each one separated by a space%s\n",argv[0]);
+    printf("/tTo run primeNumbers indtroduce p then introduce the maximum number to which the prime numbers will arrive%s\n",argv[0]);
+    printf("/t to run sortThreenumbers at first introduce so then introduce the a number1  then another number2 an then  number3 each one separated by a space %s\n",argv[0]);
+    printf("instructions%s\n",argv[0]);
+      return (0);
+  }
+  else if(strcmp(argv[1],"f") ==0)
+  {
+    argument1=atoi(argv[2]); 
+    //printf("entro a main\n");
+    fizzBuzz (argument1);
+  }
+    else if(strcmp(argv[1],"h") ==0){
+    argument1=atoi(argv[2]);
+    argument2=atoi(argv[3]);
+    //printf("before calling hypotenuse\n");
+    hypotenuse(argument1, argument2);
+  }
+  
+    else if(strcmp(argv[1],"c")==0){
+    argument1=atoi(argv[2]);
+    mirrorNumber(argument1);
+  }
+    else if(strcmp(argv[1],"a")==0){
+    argument1=atoi(argv[2]);
+    argument2=atoi(argv[3]);
+    addTwoNumbers(argument1,argument2);
+  }
+    else if(strcmp(argv[1],"s")==0){
+    argument1=atoi(argv[2]);
+    argument2=atoi(argv[3]);
+    swapTwoNumbers(argument1,argument2);
+    }
+    else if(strcmp(argv[1],"p")==0){
+    argument1=atoi(argv[2]);
+    primeNumbers(argument1);
+    }
+    else if(strcmp(argv[1],"so")==0){
+    argument1=atoi(argv[2]);
+    argument2=atoi(argv[3]);
+    argument3=atoi(argv[4]);
+    sort(argument1,argument2,argument3);
+    }
+  //printf("termino main\n");
+return (0);
+}//end main
+
+//fizzBuzz implementation
+void fizzBuzz(int maxValue)
+{
+
+int i;
+printf("you executed fizzBuzz\n");
+  for(i=1;i<=maxValue;i++){
+    if(((i % 3)||(i % 5))==0)
+      printf("number=%d fizzbuzz \n", i);
+      else if((i % 3)==0)
+        printf("number=%d fizz\n", i);
+    else if((i % 5)==0)
+        printf("number=%d buzz\n", i);
+    else{
+      printf("number=%d\n", i);
+    }
+  }//end for
+}//end fizzBuzz
+
+//hypotenuse implementation
+void hypotenuse(int leg1, leg2)
+{
+  float hypotenuse;
+ printf("you get in into hypotenuse\n");
+ printf("leg1: %d leg2: %d \n", leg1 , leg2);
+
+hypotenuse =sqrt((leg1*leg1)+leg2*leg2);
+
+printf("hypotenuse%6.3f \n", hypotenuse);
+
+}//end hypotenuse
+
+//capicua implementation
+void mirrorNumber(int capicua)
+{
+ int cap,invNum=0;
+cap=capicua;
+
+ while (cap!= 0)
+  {
+    invNum = invNum * 10;
+    invNum = invNum + cap%10;
+    cap = cap/10;
+  }
+   if(invNum==capicua)
+    printf("capicua\n");
+    else{
+      printf("no capicua\n");
+    }
+}
+//capicua end 
+
+//add two  numbers implementation
+void addTwoNumbers(int argument1,argument2)
+{
+int sum=argument1+argument2;
+printf("sume value: %d \n",sum);
+//printf("addTwoNumbers value: %d %d\n",argument1, argument2);
+}
+//addTwoNumbers end
+
+//swapTwoNumbers implementation
+void swapTwoNumbers(int argument1,argument2)
+{
+
+ int firstN=argument1, secondN=argument2, changue;
+ 
+  printf("the first number is: %d\n",firstN);
+  printf("the second number is: %d\n",secondN);
+    changue=firstN;
+    firstN=secondN;
+    secondN=changue;
+      printf("after swap the number firstN:%d \n",firstN);
+      printf("after swap the number secondN: %d\n",secondN);
+}
+//swapTwoNumbers end
+
+//primeNumbers implementation
+void primeNumbers(int lastN)
+{
+int i;
+for(i=0; i<lastN; i++)
+        if( primo(i) )
+          printf("%d\t",i);
+    printf("\n");
+
+}
+int primo(int val1){
+    int i, raiz;
+    
+    if(val1<2) return 0;
+   
+    raiz= sqrt(val1);
+    for(i=2; i<=raiz; i++)
+        if(val1%i==0) return 0;
+    return 1;
+}
+//prime numbers end
+
+//sort numbers
+void sort(int x, y,z){
+    int low,mid,hig;
+    if(x>y){
+      mid=x;
+      low=y;
+    }
+    else{
+      mid=y;
+      low=x;
+    }
+    if(mid>z){
+      hig=mid;
+        if(low>z){
+          mid=low;
+          low=z;
+        }
+        else{
+          mid=z;
+        }
+    }
+    else{
+      hig=z;
+    }
+    printf("Lowest: %d\n",low);
+    printf("Middle: %d\n",mid);
+    printf("Highest: %d\n",hig);
+}
