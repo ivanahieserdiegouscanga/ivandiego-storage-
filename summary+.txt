@@ -1,0 +1,77 @@
+C Programming
+Low level language is a type of programming language that contains basic instructions recognized by a computer.
+The programming in C has a great facility to write compact and simple code at the same time. In language C we do not have procedures as in other languages we only have functions, the procedures are simulated and it is strictly forbidden to write functions, procedures and commands in uppercase, everything is written in lowercase. Files in C are written in pure text 
+Sintaxys
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+#include <conio.h>
+HEADBOARD:
+int main (){
+VARIABLES:
+int a;
+float b;
+char c;
+double d;
+long z;
+short u;
+long long g
+BODY
+PART WHERE YOU CAN WRITE THE CODE.
+printf("Hello word.");
+printf("Estamos en programando en c");
+printf("Vamos");
+printf("Apocalypsis");
+return 0; 
+ Una sentencia compuesta, que contiene el resto de la función.
+Estructura for:
+int i;
+for (i=0; i < 100; i = i + 1) {
+	printf("%d\n", i);
+}
+}
+Estructura while:
+int i = 0;
+while (i < 100) {
+	printf("%d\n", i);
+	i = i + 1;
+}
+
+If structure
+if (condición) {
+		sentencias_si_verdadero;
+	} else {
+		sentencias_si_falso;
+	}
+
+Primary Constants Numeric Constants, Integer Constants, Real Constants, Character Constants, Single Character Constants, String Constants, Backslash Character Constants
+
+A pointer is a variable that contains the address of a data memory or another variable that contains data in an array. This means that the pointer points to the physical space in which the data or variable is located. A pointer can point to an object of any type, for example, a structure or function. Pointers can be used to reference and manipulate data structures, to refer to dynamically allocated memory blocks and to provide arguments by reference in function calls. Many of the standard C functions work with pointers, such as scanf or strcpy. These functions receive or return a value that is a pointer. For example: Scanf passes the address of the data memory to read
+
+Arithmetical operation:There are many assignment operators in C, which will actually be a simplification of more complex expressions, such as independent operations (+ =, - =, * =, / =, & =, ...) and before / after increasing / decreasing (++, -).
+Arithmetic operators
+It should be noted that the entire division and the real division differ, according to the operands.
+
+DdF C Description
++ + Sum, addition
+- - Subtraction, subtraction
+. * Multiplication, product
+Div / Integer division quotient
+Mod% Rest entire division
+//DivisionIn general, these expressions cannot be used in flowcharts.
+
+Relational Operators
+DdF C Description
+>> Senior
+≥> = Greater than or equal
+<<Minor
+≤ <= Less than or equal
+= == Equal
+≠! = Different
+Logical operators
+The operands are considered false (value 0) or certain (value other than 0). The result is always 0 or 1.
+DdF C Description
+^ && And, and, conjunction
+∨ || Or, or, disjunction
+¬! Not, no, denial	
