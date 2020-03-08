@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int main (int argc, char** argv) {
+float NUM1=0;
+float NUM2=0;
+float r= 0;
+int i;
+  if ((argc-1) % 2 != 0){
+  printf("you cant do this operation\n");
+  }
+  
+  for(i=1;i<=argc/2;i++){
+   	NUM1=atof(argv[i]);
+   	NUM2=atof(argv[(argc/2)+i]);
+    
+    r=r+(NUM1*NUM2);
+
+  }
+printf("dot product result:%6.3f \n",r);
+return 0;
+}
