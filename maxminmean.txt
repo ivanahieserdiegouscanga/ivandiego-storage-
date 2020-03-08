@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main(int argc, char** argv) {
+float sum=0, max=0,min=0,mean=0;
+int amountN=0;
+int i;
+for(i=1;i<argc;i++){
+  float num=atof(argv[i]);
+  amountN++;
+  sum=sum+num;
+  if(i==1){
+    min=num;
+    max=num;
+  }
+  else{
+    if(num>max){
+      max=num;
+  
+    }
+    if(num<min){
+      min=num;
+    }
+  }
+}
+
+mean= sum/amountN;
+printf("the max is: %6.3f \n",max);
+printf("the min  is: %6.3f \n",min);
+printf("the mean is: %6.3f \n",mean);
+return 0;
+
+}
